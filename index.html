@@ -10,7 +10,7 @@
         padding: 0;
         background-color: #FFFFFF;
         font-family: "Open Sans", sans-serif;
-        color: #0093B8;
+        color: #4dd0e1;
       }
 
       body::after {
@@ -32,10 +32,11 @@
         min-width: 512px;
         min-height: 100%;
         object-fit: cover;
-        filter: sepia(100%) hue-rotate(160deg);
+        filter: sepia(100%) hue-rotate(160deg) saturate(150%);
+        opacity: 0.4;
       }
 
-      footer {
+      header {
         position: absolute;
         top: 0;
         width: 100%;
@@ -47,6 +48,7 @@
         box-sizing: border-box;
         z-index: 10;
         font-family: "Open Sans", sans-serif;
+        filter: drop-shadow(0px 0px 10px #FFFFFF);
       }
 
       .logo-container {
@@ -68,7 +70,7 @@
       }
 
       a {
-        color: #0093B8;
+        color: #4dd0e1;
         text-decoration: none;
       }
 
@@ -79,6 +81,20 @@
       .italic {
         font-style: italic;
       }
+      
+      .subtitle {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        color: #4dd0e1;
+        margin-top: 10px;
+        font-size: 25px;
+        z-index: 15;
+        filter: drop-shadow(0px 0px 20px #FFFFFF);
+      }
+
     </style>
     <script type="x-webgl/x-vertex-shader" id="vertex-shader"> attribute vec2 a_position;
 
@@ -282,14 +298,15 @@ void main() {
     <a class="logo-container" href="mailto:team@raeon.ltd">
       <img class="logo" src="logo.png" alt="Raeon Logo" />
     </a>
-    <footer>
+    <div class="subtitle">experts in battery modules and packs</div>
+    <header>
       <div class="left">
         <a href="mailto:team@raeon.ltd">R<span class="italic">A</span>EON </a> &copy; <span id="year"></span>
       </div>
       <div class="right">
         <a href="https://www.linkedin.com/company/raeon-ltd/" target="_blank">LinkedIn</a>
       </div>
-    </footer>
+    </header>
     <script>
       document.getElementById("year").innerHTML = new Date().getFullYear();
     </script>
