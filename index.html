@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mitr&family=Red+Hat+Display:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mitr&family=Red+Hat+Display:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
     <title>Raeon</title>
     <style>
          :root {
-            --background-color: #ffffff;
+            --background-color: #fbffff;
             --nav-color: #4dd0e1;
+            --text-color: #0d141c;
+            --highlight-color: #4dd0e1;
+            --highlight2-color: #e04c96;
             --container-background-color: rgba(251, 255, 255, 0.5);
         }
         
@@ -28,9 +31,10 @@
             min-height: 100vh;
             margin: 0;
             padding: 0;
-            background-color: #FFFFFF;
+            background-color: var(--background-color);
             font-family: 'Red Hat Display', sans-serif;
-            color: #4dd0e1;
+            font-weight: 300;
+            color: var(--highlight-color);
             line-height: 0.95;
         }
         
@@ -64,6 +68,7 @@
             flex-wrap: wrap;
             gap: 1rem;
             margin: 2rem 10%;
+            font-weight: 400;
         }
         
         nav a {
@@ -96,7 +101,7 @@
             display: inline-block;
         }
         
-        .main-wrapper {
+        main-wrapper {
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -120,8 +125,8 @@
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
-            -webkit-filter: drop-shadow(0px 0px 1rem #FBFFFF);
-            filter: drop-shadow(0px 0px 1rem #FBFFFF);
+            -webkit-filter: drop-shadow(0px 0px 1rem var(--background-color));
+            filter: drop-shadow(0px 0px 1rem var(--background-color));
             text-decoration: none;
         }
         
@@ -176,21 +181,23 @@
             font-size: 1.5rem;
             text-align: left;
             padding: 2rem;
-            color: #4dd0e1;
-            border: medium solid #e04c96;
+            color: var(--text-color);
+            border: medium solid var(--highlight2-color);
         }
         
-        heading {
+        h1 {
+            font-family: inherit;
             font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 1em;
             text-align: right;
             color: #e04c96;
         }
         
         .container a {
             text-decoration: none;
-            color: inherit;
+            color: var(--highlight-color);
             font-family: inherit;
-
         }
         
         .container a:hover,
@@ -212,16 +219,17 @@
         li {
             font-size: 1.5rem;
             margin-bottom: 1em;
-            color: #4dd0e1;
+            color: var(--text-color);
         }
         
         .statement {
             flex: 1;
             font-size: 2rem;
+            font-weight: 400;
             text-align: center;
             flex-basis: 100%;
-            -webkit-filter: drop-shadow(0px 0px 1rem #FBFFFF);
-            filter: drop-shadow(0px 0px 1rem #FBFFFF);
+            -webkit-filter: drop-shadow(0px 0px 1rem var(--background-color));
+            filter: drop-shadow(0px 0px 1rem var(--background-color));
         }
         
         .break {
@@ -233,12 +241,11 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            align-items: left;
             justify-content: center;
             flex-wrap: wrap;
             text-decoration: none;
             gap: 3rem;
-            max-width: 300px;
+            max-width: 305px;
         }
         
         .team {
@@ -256,7 +263,8 @@
         }
         
         .team-name {
-            color: #4dd0e1;
+            color: var(--highlight-color);
+            font-weight: 400;
         }
         
         .team-bio {
@@ -266,7 +274,50 @@
         .team img {
             height: 6rem;
             border-radius: 50%;
-            border: medium solid #4dd0e1;
+            border: medium solid var(--highlight-color);
+        }
+        
+        .column-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            text-decoration: none;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        p {
+            margin-bottom: 1em;
+        }
+        
+        .column li {
+            font-size: 1.3rem;
+            margin-bottom: 0.5em;
+            color: var(--text-color);
+        }
+        
+        footer {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            text-decoration: none;
+            justify-content: space-between;
+            gap: 2rem;
+            margin: 1rem;
+        }
+        
+        footer a {
+            text-decoration: none;
+                color: inherit;
         }
 
     </style>
@@ -459,7 +510,7 @@
             <span class="nav-icon-text">LinkedIn</span>
         </a>
     </nav>
-    <div class="main-wrapper">
+    <main-wrapper>
         <main role="main">
             <a class="logo-wrapper" href="mailto:team@raeon.ltd">
                 <div class="logo">
@@ -474,41 +525,64 @@
                     <li>custom battery development is prohibitively expensive for all but the highest volume products</li>
                     <li>without batteries which fit the requirements, products will not reach their potential, and electrification will not happen</li>
                 </ul>
-                <heading>we are combining automated design and validation, with flexible manufacturing of our unique batteries to remove the cost barrier for customers</heading><br>
+                <h1>we are combining automated design and validation, with flexible manufacturing of our unique batteries to remove the cost barrier for customers</h1><br>
                 <a href="mailto:team@raeon.ltd">get in touch to find out how</a>
             </div>
             <div class="statement"> at Raeon, we are dramatically reducing the cost of battery development and production for businesses who are electrifying </div>
             <div class="container">
-                <heading>experts in battery modules and packs</heading><br>
-
-                <div class="team-wrapper">
-                    <div class="team"><img src="https://media.licdn.com/dms/image/D4D03AQFd4PPJySYwfg/profile-displayphoto-shrink_200_200/0/1669991984492?e=1695254400&v=beta&t=YPG2MR1yWve80PZNGSJdV1iseUPgLseiD8Q1vNToeEM" alt="Murray Schofield">
-                        <div class="team-details">
-                            <div class="team-name">Murray Schofield</div>
-                            <div class="team-bio">designed and delivered volume battery products for multiple vehicles
+                <h1>experts in battery modules and packs</h1><br>
+                <div class="column-wrapper">
+                    <div class="team-wrapper">
+                        <div class="team"><img src="https://media.licdn.com/dms/image/D4D03AQFd4PPJySYwfg/profile-displayphoto-shrink_200_200/0/1669991984492?e=1695254400&v=beta&t=YPG2MR1yWve80PZNGSJdV1iseUPgLseiD8Q1vNToeEM" alt="Murray Schofield">
+                            <div class="team-details">
+                                <div class="team-name">Murray Schofield</div>
+                                <div class="team-bio">designed and delivered volume battery products for multiple vehicles
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="team"><img src="https://media.licdn.com/dms/image/C4D03AQFhoHa-2xHJGw/profile-displayphoto-shrink_200_200/0/1562924851658?e=1695254400&v=beta&t=8iiQ6xAPknaupJK21dT35OdpWxUU3AidMjy6LOok4TI" alt="Doug Morton">
-                        <div class="team-details">
-                            <div class="team-name">Doug Morton</div>
-                            <div class="team-bio">experienced venture builder, technology architect and inventor</div>
-                        </div>
-                    </div>
-
-                    <div class="team"><img src="https://media.licdn.com/dms/image/C4D03AQHq_8K232mIew/profile-displayphoto-shrink_200_200/0/1564755156604?e=1695254400&v=beta&t=jtqr2DdZ_UbioDlvZewSCVKOB3aEnsVJycY0IRHK--E" alt="Tom Brooks">
-                        <div class="team-details">
-                            <div class="team-name">Tom Brooks</div>
-                            <div class="team-bio">delivered ISO9001 certified 50 MWh semi automated battery production line
+                        <div class="team"><img src="https://media.licdn.com/dms/image/C4D03AQFhoHa-2xHJGw/profile-displayphoto-shrink_200_200/0/1562924851658?e=1695254400&v=beta&t=8iiQ6xAPknaupJK21dT35OdpWxUU3AidMjy6LOok4TI" alt="Doug Morton">
+                            <div class="team-details">
+                                <div class="team-name">Doug Morton</div>
+                                <div class="team-bio">experienced venture builder, technology architect and inventor</div>
                             </div>
                         </div>
+
+                        <!-- <div class="team"><img src="https://media.licdn.com/dms/image/C4D03AQHq_8K232mIew/profile-displayphoto-shrink_200_200/0/1564755156604?e=1695254400&v=beta&t=jtqr2DdZ_UbioDlvZewSCVKOB3aEnsVJycY0IRHK--E" alt="Tom Brooks">
+                            <div class="team-details">
+                                <div class="team-name">Tom Brooks</div>
+                                <div class="team-bio">delivered ISO9001 certified 50 MWh semi automated battery production line
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="column">
+                        <p>our goal is to accelerate electrification, across all products and industries. We offer expert consulting services to support your journey; delivering critical knowledge and experience in technologies, manufacturing, innovation, strategy, and sustainability.</p>
+                        <p>we offer expert consultation for strategy, as well as technology consulting services and custom project work.</p>
+                        <p>ask us about<span>&#8230;</span></p>
+                        <ul>
+                            <li>battery technologies and power systems design</li>
+                            <li>electric vehicle architecture and trends</li>
+                            <li>strategic technology innovation</li>
+                            <li>manufacturing automation, validation, and quality management</li>
+                            <li>hardware design and sustainability</li>
+                        </ul>
                     </div>
                 </div>
-
             </div>
         </main>
-    </div>
+    </main-wrapper>
+    <footer>
+        <div>Raeon Ltd. is registered in England & Wales: 1‍4‍8‍4‍5‍2‍0‍4
+            <br>Registered office: 5 Keepers Close, Banbury, OX16 9XE</div>
+        <div>
+            <a href="mailto:team@raeon.ltd">R<span class="italic">A</span>EON </a> &copy; <span id="year"></span>
+        </div>
+    </footer>
+    <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+
+    </script>
 </body>
 
 </html>
