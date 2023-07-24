@@ -194,7 +194,8 @@
         
         .button {
             display: inline-block;
-            padding: 12px 12px;
+            padding: 1rem 1rem;
+            margin: -1rem -1rem;
             background-color: var(--background-color);
             text-decoration: none;
             border-radius: 0.5rem;
@@ -554,7 +555,7 @@
     </nav>
     <div class="main-wrapper">
         <main role="main">
-            <a id="email" class="logo-wrapper" href="#">
+            <a id="email" class="logo-wrapper" href="mailto:team@raeon.ltd">
                 <div class="logo">
                     <img src="https://raeon.ltd/logo.png" alt="Logo" onerror="imgError(this);">
                 </div>
@@ -586,7 +587,7 @@
                 </div>
 
                 <h1>we are combining automated design and validation, with flexible manufacturing of our unique batteries to remove the cost barrier for customers</h1><br>
-                <a id="email" class="button" href="#">get in touch to find out how</a>
+                <a id="email" class="button" href="mailto:team@raeon.ltd">get in touch to find out how</a>
             </section>
             <aside class="statement"> at Raeon, we are dramatically reducing the cost and speed of battery development and production for businesses who are electrifying </aside>
             <section class="container">
@@ -637,7 +638,7 @@
     <footer>
         <div>Raeon Ltd. is registered in England <span>&#38;</span> Wales: 1‍4‍8‍4‍5‍2‍0‍4</div>
         <div>
-            <a id="email" href="#">R<span class="italic">A</span>EON </a> &copy; <span id="year"></span>
+            <a id="email" href="mailto:team@raeon.ltd">R<span class="italic">A</span>EON </a> &copy; <span id="year"></span>
         </div>
 
     </footer>
@@ -645,7 +646,7 @@
         document.getElementById("year").innerHTML = new Date().getFullYear();
 
     </script>
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
         function mailto() {
             var username = "team";
             var domain = "raeon.ltd";
@@ -655,7 +656,7 @@
         var email = document.getElementById("email");
         email.href = mailto();
 
-    </script>
+    </script>-->
 </body>
 
 </html>
