@@ -18,6 +18,7 @@
             --container-background-color: rgba(251, 255, 255, 0.5);
             --font-family: 'Red Hat Display', sans-serif;
             --main-font-weight: 300;
+            --image-size: 6rem;
         }
         
         * {
@@ -135,7 +136,7 @@
         }
         
         .logo img {
-            height: 6rem;
+            height: var(--image-size);
         }
         
         .logo-gap {
@@ -155,6 +156,7 @@
         .raeon span {
             font-family: inherit;
             font-style: italic;
+            margin-left: -0.05em;
         }
         
         .container {
@@ -260,10 +262,43 @@
         }
         
         .team img {
-            height: 6rem;
-            width: 6rem;
+            height: var(--image-size);
+            width: var(--image-size);
             border-radius: 50%;
             border: medium solid var(--highlight-color);
+        }
+        
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            height: var(--image-size);
+            width: 100%;
+            overflow: hidden;
+            gap: 1rem;
+            margin-bottom: 1em;
+        }
+        
+        .image-wrapper {
+            flex: 0 0 auto;
+            height: var(--image-size);
+            width: var(--image-size);
+            overflow: hidden;
+            border-radius: 50%;
+            border: medium solid var(--highlight-color);
+            position: relative;
+        }
+        
+        .responsive-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
         }
         
         .column-wrapper {
@@ -514,10 +549,28 @@
                     <li>custom battery development is prohibitively expensive for all but the highest volume products</li>
                     <li>without batteries which fit the requirements, products will not reach their potential, and electrification will not happen</li>
                 </ul>
+                <div class="image-container">
+                    <div class="image-wrapper">
+                        <img class="responsive-image" src="https://github.com/Raeon-ltd/Raeon-ltd.github.io/blob/main/image1.jpg?raw=true" alt="Image 1">
+                    </div>
+                    <div class="image-wrapper">
+                        <img class="responsive-image" src="https://github.com/Raeon-ltd/Raeon-ltd.github.io/blob/main/image2.jpg?raw=true" alt="Image 2">
+                    </div>
+                    <div class="image-wrapper">
+                        <img class="responsive-image" src="https://github.com/Raeon-ltd/Raeon-ltd.github.io/blob/main/image3.jpg?raw=true" alt="Image 3">
+                    </div>
+                    <div class="image-wrapper">
+                        <img class="responsive-image" src="https://github.com/Raeon-ltd/Raeon-ltd.github.io/blob/main/image4.jpg?raw=true" alt="Image 4">
+                    </div>
+                    <div class="image-wrapper">
+                        <img class="responsive-image" src="https://github.com/Raeon-ltd/Raeon-ltd.github.io/blob/main/image5.jpg?raw=true" alt="Image 5">
+                    </div>
+                </div>
+
                 <h1>we are combining automated design and validation, with flexible manufacturing of our unique batteries to remove the cost barrier for customers</h1><br>
                 <a id="email" href="#">get in touch to find out how</a>
             </section>
-            <aside class="statement"> at Raeon, we are dramatically reducing the cost of battery development and production for businesses who are electrifying </aside>
+            <aside class="statement"> at Raeon, we are dramatically reducing the cost and speed of battery development and production for businesses who are electrifying </aside>
             <section class="container">
                 <h1>experts in battery modules and packs</h1><br>
                 <div class="column-wrapper">
@@ -564,8 +617,7 @@
         </main>
     </div>
     <footer>
-        <div>Raeon Ltd. is registered in England <span>&#38;</span> Wales: 1‍4‍8‍4‍5‍2‍0‍4
-            <br>Registered office: 5 Keepers Close, Banbury, OX16 9XE</div>
+        <div>Raeon Ltd. is registered in England <span>&#38;</span> Wales: 1‍4‍8‍4‍5‍2‍0‍4</div>
         <div>
             <a id="email" href="#">R<span class="italic">A</span>EON </a> &copy; <span id="year"></span>
         </div>
