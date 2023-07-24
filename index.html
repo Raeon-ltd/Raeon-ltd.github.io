@@ -19,6 +19,7 @@
             --font-family: 'Red Hat Display', sans-serif;
             --main-font-weight: 300;
             --image-size: 6rem;
+            --max-width: 1600px;
         }
         
         * {
@@ -36,6 +37,8 @@
             min-height: 100vh;
             background-color: var(--background-color);
             color: var(--highlight-color);
+            max-width: var(--max-width);
+            margin: 0 auto;
         }
         
         body::after {
@@ -189,7 +192,22 @@
             font-family: inherit;
         }
         
-        .container a:hover,
+        .button {
+            display: inline-block;
+            padding: 12px 12px;
+            background-color: var(--background-color);
+            text-decoration: none;
+            border-radius: 0.5rem;
+            border: medium solid var(--highlight-color);
+            transition: background-color 0.2s ease;
+            width: max-content;
+        }
+        
+        .button:hover {
+            background-color: var(--highlight2-color);
+            border: medium solid var(--highlight2-color);
+        }
+        
         .nav-link:hover {
             text-decoration-line: underline;
             filter: opacity(100%);
@@ -568,7 +586,7 @@
                 </div>
 
                 <h1>we are combining automated design and validation, with flexible manufacturing of our unique batteries to remove the cost barrier for customers</h1><br>
-                <a id="email" href="#">get in touch to find out how</a>
+                <a id="email" class="button" href="#">get in touch to find out how</a>
             </section>
             <aside class="statement"> at Raeon, we are dramatically reducing the cost and speed of battery development and production for businesses who are electrifying </aside>
             <section class="container">
@@ -621,20 +639,21 @@
         <div>
             <a id="email" href="#">R<span class="italic">A</span>EON </a> &copy; <span id="year"></span>
         </div>
-        <script type="text/javascript">
-            function mailto() {
-                var username = "team";
-                var domain = "raeon.ltd";
-                var email = username + "@" + domain;
-                return "mailto:" + email;
-            }
-            var email = document.getElementById("email");
-            email.href = mailto();
 
-        </script>
     </footer>
     <script>
         document.getElementById("year").innerHTML = new Date().getFullYear();
+
+    </script>
+    <script type="text/javascript">
+        function mailto() {
+            var username = "team";
+            var domain = "raeon.ltd";
+            var email = username + "@" + domain;
+            return "mailto:" + email;
+        }
+        var email = document.getElementById("email");
+        email.href = mailto();
 
     </script>
 </body>
