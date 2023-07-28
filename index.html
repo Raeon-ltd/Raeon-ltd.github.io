@@ -15,11 +15,12 @@
             --text-color: #0d141c;
             --highlight-color: #4dd0e1;
             --highlight2-color: #e04c96;
-            --container-background-color: rgba(251, 255, 255, 0.5);
+            --container-background-color: rgba(251, 255, 255, 0.6);
             --font-family: 'Red Hat Display', sans-serif;
             --main-font-weight: 300;
             --image-size: 6rem;
             --max-width: 1600px;
+            --border-width: 2px;
         }
         
         * {
@@ -28,6 +29,7 @@
             box-sizing: border-box;
             font-family: var(--font-family);
             font-weight: var(--main-font-weight);
+            font-size: 1rem;
             line-height: 0.95;
         }
         
@@ -35,6 +37,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            min-height: 100lvh;
             background-color: var(--background-color);
             color: var(--highlight-color);
             max-width: var(--max-width);
@@ -61,7 +64,7 @@
             min-height: 100%;
             object-fit: cover;
             filter: sepia(100%) hue-rotate(160deg) saturate(200%);
-            opacity: 0.2;
+            opacity: 0.1;
             z-index: -1;
         }
         
@@ -70,11 +73,11 @@
             justify-content: flex-end;
             flex-wrap: wrap;
             gap: 1rem;
-            margin: 2rem 10%;
+            margin: 2rem 10% -2rem 10%;
         }
         
         .nav-link {
-            margin: 0 10px;
+            margin: 0 0.5rem;
             text-decoration: none;
             color: var(--nav-color);
             display: flex;
@@ -82,8 +85,8 @@
         }
         
         .nav-icon {
-            width: 1em;
-            height: 1em;
+            width: 1rem;
+            height: 1rem;
             margin-right: 0.2em;
             opacity: 0.5;
         }
@@ -158,30 +161,31 @@
         
         .raeon span {
             font-family: inherit;
+            font-size: inherit;
             font-style: italic;
-            margin-left: -0.05em;
+            margin-left: -0.05rem;
         }
         
         .container {
             backdrop-filter: blur(4px);
             background-color: var(--container-background-color);
             flex: 1.5;
-            min-height: 500px;
-            min-width: 400px;
-            border-radius: 20px;
+            min-height: 30rem;
+            min-width: 25rem;
+            border-radius: 1.25rem;
             box-shadow: 0 0 50px 15px rgba(255, 255, 255, 0.3);
             font-size: 1.5rem;
             text-align: left;
-            padding: 2rem;
+            padding: 1rem 2rem 2rem 2rem;
             color: var(--text-color);
-            border: medium solid var(--highlight2-color);
+            border: var(--border-width) solid var(--highlight2-color);
         }
         
         h1 {
             font-family: inherit;
             font-size: 2rem;
             font-weight: 300;
-            margin-bottom: 1em;
+            margin: 1rem 0rem 2rem 0rem;
             text-align: right;
             color: #e04c96;
         }
@@ -195,18 +199,19 @@
         .button {
             display: inline-block;
             padding: 1rem 1rem;
-            margin: -1rem -1rem;
+            margin: 0rem -1rem -1rem -1rem;
             background-color: var(--background-color);
             text-decoration: none;
             border-radius: 0.5rem;
-            border: medium solid var(--highlight-color);
+            border: var(--border-width) solid var(--highlight-color);
             transition: background-color 0.2s ease;
             width: max-content;
+            font-size: inherit;
         }
         
         .button:hover {
             background-color: var(--highlight2-color);
-            border: medium solid var(--highlight2-color);
+            border: var(--border-width) solid var(--highlight2-color);
         }
         
         .nav-link:hover {
@@ -216,19 +221,25 @@
         
         ul {
             list-style: none;
+            padding: 0;
+            margin-left: 0;
+        }
+        
+        ul li {
+            font-size: 1.5rem;
+            margin-bottom: 1em;
+            color: var(--text-color);
+            position: relative;
         }
         
         ul li:before {
             content: "⦿";
+            color: var(--highlight-color);
             font-size: 1rem;
-            margin-right: 0.5rem;
-            vertical-align: middle;
-        }
-        
-        li {
-            font-size: 1.5rem;
-            margin-bottom: 1em;
-            color: var(--text-color);
+            position: absolute;
+            left: -1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
         }
         
         .statement {
@@ -254,7 +265,7 @@
             flex-wrap: wrap;
             text-decoration: none;
             gap: 3rem;
-            max-width: 305px;
+            max-width: 20rem;
         }
         
         .team {
@@ -274,6 +285,7 @@
         .team-name {
             color: var(--highlight-color);
             font-weight: 400;
+            font-size: 1.5rem;
         }
         
         .team-bio {
@@ -284,7 +296,7 @@
             height: var(--image-size);
             width: var(--image-size);
             border-radius: 50%;
-            border: medium solid var(--highlight-color);
+            border: var(--border-width) solid var(--highlight-color);
         }
         
         .image-container {
@@ -295,7 +307,7 @@
             width: 100%;
             overflow: hidden;
             gap: 1rem;
-            margin-bottom: 1em;
+            margin: 1rem 0rem;
         }
         
         .image-wrapper {
@@ -304,7 +316,7 @@
             width: var(--image-size);
             overflow: hidden;
             border-radius: 50%;
-            border: medium solid var(--highlight-color);
+            border: var(--border-width) solid var(--highlight-color);
             position: relative;
         }
         
@@ -333,16 +345,17 @@
         
         .column {
             flex: 1;
-            min-width: 300px;
+            min-width: 20rem;
         }
         
         p {
-            margin-bottom: 1em;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
         
         .column li {
             font-size: 1.3rem;
-            margin-bottom: 0.5em;
+            margin-bottom: 0.5rem;
             color: var(--text-color);
         }
         
@@ -354,13 +367,18 @@
             flex-wrap: wrap;
             text-decoration: none;
             justify-content: space-between;
-            gap: 2rem;
+            gap: 0rem 2rem;
             margin: 1rem;
+            font-size: 0.8rem;
         }
         
         footer a {
             text-decoration: none;
             color: inherit;
+        }
+        
+        footer .privacy {
+            cursor: pointer;
         }
 
     </style>
@@ -381,14 +399,6 @@
     }
     gtag('js', new Date());
     gtag('config', 'G-ZRH63BBNCJ');
-
-</script>
-<script>
-    function imgError(image) {
-        image.onerror = "";
-        image.src = "/path/to/default/image.jpg";
-        return true;
-    }
 
 </script>
 
@@ -549,7 +559,7 @@
     </script>
     <nav>
         <a href="https://www.linkedin.com/company/raeon-ltd/" target="_blank" class="nav-link">
-            <img src="https://raw.githubusercontent.com/Raeon-ltd/Raeon-ltd.github.io/fd84731e33a0dfecbcbe1450d02b00be1a32fcbc/linkedin.svg" alt="LinkedIn Icon" class="nav-icon">
+            <img src="https://raw.githubusercontent.com/Raeon-ltd/Raeon-ltd.github.io/fd84731e33a0dfecbcbe1450d02b00be1a32fcbc/linkedin.svg" alt="Raeon LinkedIn" class="nav-icon">
             <span>LinkedIn</span>
         </a>
     </nav>
@@ -557,12 +567,13 @@
         <main role="main">
             <a id="email" class="logo-wrapper" href="mailto:team@raeon.ltd">
                 <div class="logo">
-                    <img src="https://raeon.ltd/logo.png" alt="Logo" onerror="imgError(this);">
+                    <img src="https://raeon.ltd/logo.png" alt="Logo">
                 </div>
                 <div class="logo-gap"></div>
                 <div class="raeon"> R<span>A</span>EON </div>
             </a>
             <section class="container">
+                <h1>the world is electrifying</h1>
                 <ul>
                     <li>electrification of everything demands batteries of all shapes</li>
                     <li>custom battery development is prohibitively expensive for all but the highest volume products</li>
@@ -586,12 +597,13 @@
                     </div>
                 </div>
 
-                <h1>we are combining automated design and validation, with flexible manufacturing of our unique batteries to remove the cost barrier for customers</h1><br>
+                <h1>we are combining automated design and validation, with flexible manufacturing of our unique batteries to remove the cost barrier for customers</h1>
+                <!--<p>custom batteries, made to your requirements, delivered in unbeatable time - all without the typical investment and regardless of volume</p><br>-->
                 <a id="email" class="button" href="mailto:team@raeon.ltd">get in touch to find out how</a>
             </section>
             <aside class="statement"> at Raeon, we are dramatically reducing the cost and speed of battery development and production for businesses who are electrifying </aside>
             <section class="container">
-                <h1>experts in battery modules and packs</h1><br>
+                <h1>experts in battery modules and packs</h1>
                 <div class="column-wrapper">
                     <div class="team-wrapper">
                         <div class="team">
@@ -636,12 +648,31 @@
         </main>
     </div>
     <footer>
-        <div>Raeon Ltd. is registered in England <span>&#38;</span> Wales: 1‍4‍8‍4‍5‍2‍0‍4</div>
+        <div>Raeon Ltd is registered in England <span>&#38;</span> Wales: 1‍4‍8‍4‍5‍2‍0‍4</div>
+        <div class="privacy" id="privacy" onclick="changeText()"></div>
         <div>
             <a id="email" href="mailto:team@raeon.ltd">R<span class="italic">A</span>EON </a> &copy; <span id="year"></span>
         </div>
-
     </footer>
+    <script>
+        var initialMessage = "privacy <span>&#38;</span> cookies";
+        var privacyMessage = "we value privacy: no personal data is collected or tracked on our site";
+        window.onload = function() {
+            var privacyDiv = document.getElementById("privacy");
+            privacyDiv.innerHTML = initialMessage;
+            privacyDiv.title = privacyMessage;
+        }
+
+        function changeText() {
+            var privacyDiv = document.getElementById("privacy");
+            if (privacyDiv.innerHTML === privacyMessage) {
+                privacyDiv.innerHTML = initialMessage;
+            } else {
+                privacyDiv.innerHTML = privacyMessage;
+            }
+        }
+
+    </script>
     <script>
         document.getElementById("year").innerHTML = new Date().getFullYear();
 
@@ -655,7 +686,6 @@
         }
         var email = document.getElementById("email");
         email.href = mailto();
-
     </script>-->
 </body>
 
