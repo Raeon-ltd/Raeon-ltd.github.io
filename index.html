@@ -59,12 +59,13 @@
     </script>
     <style>
          :root {
-            --background-color: #fbffff;
+            --background-color: #0d141c;
             --nav-color: #4dd0e1;
-            --text-color: #0d141c;
+            --text-color: hsl(212, 37%, 80%);
             --highlight-color: #4dd0e1;
-            --highlight2-color: #4dd0e1; /*e04c96*/
-            --container-background-color: rgba(251, 255, 255, 0.6);
+            --highlight2-color: hsl(212, 37%, 80%); /*#0093b8*/
+            --highlight3-color: #e04c96;
+            --container-background-color: rgba(13, 20, 28, 0.6);
             --font-family: 'Red Hat Display', sans-serif;
             --main-font-weight: 300;
             --image-size: 6rem;
@@ -78,8 +79,8 @@
             box-sizing: border-box;
             font-family: var(--font-family);
             font-weight: var(--main-font-weight);
-            font-size: 1rem;
-            line-height: 0.95;
+            font-size: 0.95rem;
+            line-height: 0.98;
         }
         
         body {
@@ -112,8 +113,8 @@
             min-width: 512px;
             min-height: 100%;
             object-fit: cover;
-            filter: sepia(100%) hue-rotate(160deg) saturate(200%);
-            opacity: 0.1;
+            filter: invert(90%) sepia(100%) hue-rotate(155deg) saturate(450%) brightness(0.3);
+            opacity: 1;
             z-index: -1;
         }
         
@@ -137,7 +138,7 @@
             width: 1rem;
             height: 1rem;
             margin-right: 0.2em;
-            opacity: 0.5;
+            opacity: 0.8;
         }
         
         .nav-link:hover .nav-icon {
@@ -221,8 +222,8 @@
             flex: 1.5;
             min-height: 30rem;
             min-width: 25rem;
-            border-radius: 1.25rem;
-            box-shadow: 0 0 50px 15px rgba(255, 255, 255, 0.3);
+            border-radius: 0.2rem; /*1.25rem*/
+            box-shadow: 0 0 50px 15px var(--background-color);
             font-size: 1.5rem;
             text-align: left;
             padding: 1rem 2rem 2rem 2rem;
@@ -236,7 +237,7 @@
             font-weight: 300;
             margin: 1rem 0rem 2rem 0rem;
             text-align: right;
-            color: var(--highlight2-color);
+            color: var(--highlight-color);
         }
         
         .container a {
@@ -298,6 +299,7 @@
             font-weight: 400;
             text-align: center;
             flex-basis: 100%;
+            color: var(--highlight2-color);
             -webkit-filter: drop-shadow(0px 0px 1rem var(--background-color));
             filter: drop-shadow(0px 0px 1rem var(--background-color));
         }
@@ -653,7 +655,7 @@
             </section>
             <aside class="statement"> at Raeon, we are dramatically reducing the cost and speed of battery development and production for businesses who are electrifying </aside>
             <section class="container">
-                <h1>experts in battery modules and packs</h1>
+                <h1>disrupting battery customisation</h1>
                 <div class="column-wrapper">
                     <div class="team-wrapper">
                         <article class="team" itemscope itemtype="https://schema.org/Person">
@@ -685,16 +687,12 @@
                     </div>
 
                     <div class="column">
-                        <p>our goal is to accelerate electrification, across all products and industries. We offer expert consulting services to support your journey; delivering critical knowledge and experience.</p>
-                        <p>we offer expert strategy consultation, as well as technology consulting services and custom project work.</p>
-                        <p>ask us about<span>&#8230;</span></p>
-                        <ul>
-                            <li>battery technologies and power systems design</li>
-                            <li>electric vehicle architecture and trends</li>
-                            <li>strategic technology innovation</li>
-                            <li>manufacturing automation, product validation, and quality management</li>
-                            <li>hardware design and sustainability</li>
-                        </ul>
+                        <p>we reduce custom battery development cost and time by 10<span>&#10005;</span> for businesses who are electrifying, accelerating the transition to a clean economy
+                        </p>
+                        <p>we believe everyone should have access to their perfect battery, without the barriers of expensive development and long lead times
+                        </p>
+                        <p>we are developing battery products that can be customised in both geometry and performance using our low tooling processes. Pre-characterisation and validation through simulation means efficient products and 90% fewer physical tests per customer. Our generative design pipeline and self-service configuration portal unlock massive scale, accelerate time to market, and support a high rate of iteration
+                        </p>
                     </div>
                 </div>
             </section>
